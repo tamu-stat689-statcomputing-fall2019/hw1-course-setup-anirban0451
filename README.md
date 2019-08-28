@@ -1,6 +1,6 @@
 # Assignment 1 - Getting started
 
-Student: Chakraborty, Anirban
+Student: Chakraborty ,  Anirban
 
 Potentially helpful resources:
 
