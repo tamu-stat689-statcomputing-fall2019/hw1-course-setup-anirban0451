@@ -5,7 +5,8 @@
 # seed  - starting seed value
 generateY <- function(X, beta, sigma, seed = 5832652){
   #[ToDo] Set seed and generate Y following linear model
-  Y=as.vector(X%*%(as.matrix(beta))+as.matrix(rnorm(n=nrow(X),mean=0,sd=sigma)))
+  Y = as.vector( X %*% (as.matrix(beta)) + 
+                   as.matrix(rnorm(n = nrow(X) , mean = 0 , sd = sigma)))
   # Return Y
   return(Y)
 }
@@ -14,7 +15,12 @@ generateY <- function(X, beta, sigma, seed = 5832652){
 # X - design matrix
 # Y -response
 calculateBeta <- function(X, Y){
+  
+  ymatrix = as.matrix(Y)
+  
   # Calculate beta_LS
+  
+  beta_LS = solve( crossprod(X) , crossprod(X,ymatrix) )
   
   # Return beta
   return(beta_LS)
